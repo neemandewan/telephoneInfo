@@ -1,0 +1,34 @@
+<div class="col-xs-12">
+	<div class="col-xs-12">
+		<h3>Monthly Commission</h3>
+		<form ng-submit= generateMonthlyCommission(mc)>
+			<input type="number" name="" placeholder="Enter year" ng-model="mc.year" required>
+			<input type="number" name="" placeholder="Enter month" ng-model="mc.month" required>
+			<br/>
+			<input type="submit" class="btn btn-warning btn-raised" style="margin-left: 10px;" value="Generate">
+
+			<div ng-show="showMonthlyCommission">
+				<button class="btn btn-success btn-raised" ng-click="printDiv()" style="margin-left: 10px;">Print</button>
+				<div id="printDiv">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Sales Representative</th>
+								<th>Commission</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr class="table-tr" ng-repeat="comm in commissions track by $index">
+								<td>{{comm.salesRepId}}</td>
+								<td>$ {{comm.totalCommission | uptoTwo}}</td>
+							</tr>
+						</tbody>
+
+					</table>
+				</div>
+					
+			</div>
+		</form>
+	</div>
+</div>

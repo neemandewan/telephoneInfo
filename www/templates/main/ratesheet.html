@@ -1,0 +1,51 @@
+<div class="col-xs-12">
+	<div class="col-xs-12">
+		<h3>Generate Rate Sheet</h3>
+		<form ng-submit= generateratesheet(rt)>
+			<!-- <input type="number" name="" placeholder="Enter service id" ng-model="rt.serviceId" required> -->
+			<select ng-model="rt.serviceId" required>
+				<option ng-repeat="sv in services track by $index" value="{{sv.serviceId}}">{{sv.serviceName}}</option>
+			</select>
+			<input type="number" name="" placeholder="Enter year" ng-model="rt.year" required>
+			<input type="number" name="" placeholder="Enter month" ng-model="rt.month" required>
+			<input type="submit" class="btn btn-warning btn-raised" style="margin-left: 10px;" value="Generate">
+
+			<div ng-show="showRateSheet">
+				<button class="btn btn-success btn-raised" ng-click="printDiv()" style="margin-left: 10px;">Print</button>
+				<div id="printDiv">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Service</th>
+								<th>Destination Country</th>
+								<th>Effective Date</th>
+								<th>Offset Peak Period Start</th>
+								<th>Peak Period Start</th>
+								<th>Peak Rate</th>
+								<th>Off Peak Rate</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							
+							<tr class="table-tr" ng-repeat="rs in ratesheets  track by $index">
+								<div ng-if="$index < 100">
+									<td>{{rs.serviceName}}</td>
+									<td>{{rs.destCountry}}</td>
+									<td>{{rs.effectiveDate | removeTime}}</td>
+									<td>{{rs.offsetPeakPeriodStart}}</td>
+									<td>{{rs.peakPeriodStart}}</td>
+									<td>{{rs.peakRate}}</td>
+									<td>{{rs.offPeakRate}}</td>
+								</div>
+									
+							</tr>
+						</tbody>
+
+					</table>
+				</div>
+					
+			</div>
+		</form>
+	</div>
+</div>

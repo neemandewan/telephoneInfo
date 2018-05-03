@@ -1,0 +1,25 @@
+{
+  "name": "telecom-company",
+  "version": "1.0.0",
+  "description": "Database project for telecom company",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "neeman.drn@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.0",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "csvtojson": "^1.1.9",
+    "ejs": "^2.5.7",
+    "errorhandler": "^1.5.0",
+    "exceljs": "^0.7.1",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "morgan": "^1.9.0",
+    "mssql": "^4.1.0",
+    "serve-favicon": "^2.4.5"
+  }
+}

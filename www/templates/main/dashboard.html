@@ -1,0 +1,32 @@
+<!-- Main default -->
+<div material ng-cloak>
+
+  <div class="container">
+      <ul id="gn-menu" class="gn-menu-main">
+          <li class="gn-trigger">
+              <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+              <nav class="gn-menu-wrapper">
+                  <div class="gn-scroller">
+                      <ul class="gn-menu">
+                          <li><a class="btn btn-flat gn-icon glyphicon glyphicon-th-large n-icon" ng-click="setTemplate('0')">HOME</a></li>
+                      </ul>
+                  </div>
+              </nav>
+          </li>
+          <div class="pull-left">
+            <h3 class="heading">Telephone Company Database</h3>  
+          </div>
+          <div class="pull-right">
+            <span ng-click="changePage(2)">Generate Bill</span> 
+            <span ng-click="changePage(4)">Rate Sheet</span>
+            <span ng-click="changePage(3)">Commission</span>
+            <span ng-click="changePage(1)">Traffic</span> 
+            <span ng-click="changePage(0)">Update Data</span>
+          </div>
+      </ul>
+      <br class="break-nav" />
+      <div class="t-content" ng-include = "template.content">
+      </div>
+      <div style="clear:both;"></div>
+  </div>
+</div>

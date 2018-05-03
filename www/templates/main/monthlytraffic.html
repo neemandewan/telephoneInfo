@@ -1,0 +1,41 @@
+<div class="col-xs-12">
+	<div class="col-xs-12">
+		<h3>Monthly Traffic summary</h3>
+		<form ng-submit= generateMonthlyTraffic(mt)>
+			<input type="number" name="" placeholder="Enter year" ng-model="mt.year" required>
+			<input type="number" name="" placeholder="Enter month" ng-model="mt.month" required>
+			<br/>
+			<input type="submit" class="btn btn-warning btn-raised" style="margin-left: 10px;" value="Generate">
+
+			<div ng-show="showMonthlyTraffic">
+				<button class="btn btn-success btn-raised" ng-click="printDiv()" style="margin-left: 10px;">Print</button>
+				<div id="printDiv">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Service Name</th>
+								<th>From Country</th>
+								<th>To Country</th>
+								<th>Total Duration</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							
+							<tr class="table-tr" ng-repeat="mont in monthlyTraffic track by $index">
+								<div ng-if = "$index < 100">
+									<td>{{mont.serviceName}}</td>
+									<td>{{mont.From_Country}}</td>
+									<td>{{mont.To_Country}}</td>
+									<td>{{mont.Total_Duration}}</td>
+								</div>
+							</tr>
+						</tbody>
+
+					</table>
+				</div>
+					
+			</div>
+		</form>
+	</div>
+</div>
